@@ -15,7 +15,14 @@ Este projeto é uma plataforma web desenvolvida em **PHP** e **MySQL** com o obj
 
 O projeto está atualmente em **deploy** e pode ser acessado no seguinte endereço:
 
-🔗 **[SOUND - Plataforma Musical](https://projetosound.free.nf/php/index.php)**
+🔗 **[SOUND - Plataforma Musical](https://rede-social-sound-three.vercel.app)**
+
+### Acesso de demonstração
+
+Para conhecer a plataforma online sem fazer cadastro ou configurar banco de dados, use na tela de login:
+
+* **E-mail:** `jow@gmail`
+* **Senha:** `123`
 
 ***
 

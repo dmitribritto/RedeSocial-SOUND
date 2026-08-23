@@ -1,7 +1,5 @@
 <?php 
     session_start();
-    include_once('config.php');
-
     if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
     {
         unset($_SESSION['email']);
@@ -12,16 +10,20 @@
 
     $email = $_SESSION['email'];
     $senha = $_SESSION['senha'];
-    
-    $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
-    $result = $conexao->query($sql);
+    $isDemoUser = $email === 'jow@gmail' && $senha === '123';
 
-    if(mysqli_num_rows($result) < 1)
-    {
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header('Location: login.php');
-        exit();
+    if (!$isDemoUser) {
+        include_once('config.php');
+        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
+        $result = $conexao->query($sql);
+
+        if(mysqli_num_rows($result) < 1)
+        {
+            unset($_SESSION['email']);
+            unset($_SESSION['senha']);
+            header('Location: login.php');
+            exit();
+        }
     }
 
     $logado = $_SESSION['email'];

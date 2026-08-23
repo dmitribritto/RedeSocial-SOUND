@@ -9,6 +9,50 @@
     {
       "source": "/",
       "destination": "/api/index.php"
+    },
+    {
+      "source": "/login.php",
+      "destination": "/api/login.php"
+    },
+    {
+      "source": "/cadastro.php",
+      "destination": "/api/cadastro.php"
+    },
+    {
+      "source": "/testLogin.php",
+      "destination": "/api/testLogin.php"
+    },
+    {
+      "source": "/home.php",
+      "destination": "/api/home.php"
+    },
+    {
+      "source": "/propostas.php",
+      "destination": "/api/propostas.php"
+    },
+    {
+      "source": "/servico.php",
+      "destination": "/api/servico.php"
+    },
+    {
+      "source": "/sistema.php",
+      "destination": "/api/sistema.php"
+    },
+    {
+      "source": "/edit.php",
+      "destination": "/api/edit.php"
+    },
+    {
+      "source": "/saveEdit.php",
+      "destination": "/api/saveEdit.php"
+    },
+    {
+      "source": "/delete.php",
+      "destination": "/api/delete.php"
+    },
+    {
+      "source": "/sair.php",
+      "destination": "/api/sair.php"
     }
   ]
 }
