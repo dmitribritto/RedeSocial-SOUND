@@ -1,6 +1,8 @@
 <?php 
     session_start();
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
+    require_once('demo-access.php');
+    $hasDemoCookie = hasDemoAccess();
+    if(!$hasDemoCookie && ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)))
     {
         unset($_SESSION['email']);
         unset($_SESSION['senha']);
@@ -8,9 +10,10 @@
         exit();
     }
 
-    $email = $_SESSION['email'];
-    $senha = $_SESSION['senha'];
-    $isDemoUser = $email === 'jow@gmail' && $senha === '123';
+    $email = $_SESSION['email'] ?? 'jow@gmail';
+    $senha = $_SESSION['senha'] ?? '123';
+    $isDemoUser = ($email === 'jow@gmail' && $senha === '123')
+        || $hasDemoCookie;
 
     if (!$isDemoUser) {
         include_once('config.php');

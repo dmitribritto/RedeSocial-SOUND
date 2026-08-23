@@ -24,6 +24,8 @@ Para conhecer a plataforma online sem fazer cadastro ou configurar banco de dado
 * **E-mail:** `jow@gmail`
 * **Senha:** `123`
 
+> O acesso demonstrativo é protegido por uma chave privada configurada na Vercel (`DEMO_ACCESS_SECRET`).
+
 ***
 
 ## ⚙️ Configuração Local

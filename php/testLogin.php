@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require_once('demo-access.php');
     if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
     {
         $email = $_POST['email'];
@@ -10,6 +11,10 @@
         {
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
+            if (!grantDemoAccess()) {
+                http_response_code(503);
+                exit('Acesso demonstrativo temporariamente indisponível.');
+            }
             header('Location: home.php');
             exit();
         }
