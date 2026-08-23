@@ -1,6 +1,12 @@
 <?php
-// Copie este arquivo para php/config.php apenas para desenvolvimento local.
-// Na Vercel, cadastre estas variáveis em Settings > Environment Variables.
+// Desenvolvimento local: se necessário, crie config.local.php com as credenciais.
+// Produção: configure DB_HOST, DB_PORT, DB_USER, DB_PASSWORD e DB_NAME na Vercel.
+$localConfig = __DIR__ . '/config.local.php';
+if (is_file($localConfig)) {
+    require $localConfig;
+    return;
+}
+
 $dbHost = getenv('DB_HOST') ?: 'localhost';
 $dbPort = (int) (getenv('DB_PORT') ?: 3306);
 $dbUsername = getenv('DB_USER') ?: 'root';
